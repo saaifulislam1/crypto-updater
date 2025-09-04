@@ -1,65 +1,105 @@
-.coin-container{
-    display: flex;
-    justify-content: center;
-    border: 3px outset grey;
-    
-}
-.coin-row{
-    display: flex;
-    flex-direction: row;
-    justify-content: start;
-    align-items: center;
-    height: 80px;
-    border-radius: 1px solid #d7d7d7;
-    width: 900px;
-    
-
-}
-.coin{
-    display: flex;
-    align-items: center;
-    padding-right: 24px;
-    min-width: 300px;
-
-
-}
-.coin h1{
-   font-size: 16px;
-   width: 150px;
+.coin-container {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 1.5rem;
 }
 
-.coin img{
-    height: 30px;
-    width: 30px;
-    margin-right: 10px;
+.coin-row {
+  display: flex;
+  flex-direction: column;
+  background: #161b22;
+  border-radius: 16px;
+  padding: 1.5rem;
+  width: 100%;
+  max-width: 350px;
+  min-height: 220px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.4);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
 }
 
-.coin-symbol{
-    text-transform: uppercase;
+.coin-row:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.6);
 }
-.coin-data{
-    display: flex;
-    text-align: center;
-    justify-content: space-between;
-    width: 100%;
-}
-.coin-price{
-    width:200px ;
-}
-.coin-volume{
-    width: 355px;
-    
-}
-.coin-marketcap{
-    width: 230px;
-}
-.coin-percent{
-    width: 100%;
-}
-.red{
-    color: red;
 
+.coin {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 1rem;
 }
-.green{
-    color: green;
+
+.coin img {
+  height: 42px;
+  width: 42px;
+  border-radius: 50%;
+}
+
+.coin h1 {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #e6edf3;
+}
+
+.coin-symbol {
+  text-transform: uppercase;
+  font-size: 0.9rem;
+  color: #8b949e;
+}
+
+.coin-data {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.8rem 1.2rem;
+  width: 100%;
+}
+
+.coin-data p {
+  font-size: 0.95rem;
+  color: #c9d1d9;
+}
+
+.coin-price {
+  font-weight: 600;
+  color: #58a6ff;
+}
+
+.coin-percent {
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.arrow-icon {
+  font-size: 0.9rem;
+}
+
+.red {
+  color: #ff4d4f;
+}
+
+.green {
+  color: #4caf50;
+}
+
+/* 📱 Responsive Layout */
+@media screen and (min-width: 768px) {
+  .coin-app {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 1.5rem;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .coin-row {
+    max-width: 100%;
+    padding: 1rem;
+    min-height: auto;
+  }
+
+  .coin-data {
+    grid-template-columns: 1fr;
+  }
 }
